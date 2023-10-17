@@ -37,7 +37,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/jogos', [JogoController::class, 'index'])->name('jogos.index');
+Route::get('/index', [JogoController::class, 'index'])->name('jogos.index');
 
 Route::fallback(function(){
     return "Erro ao encontrar a rota";
