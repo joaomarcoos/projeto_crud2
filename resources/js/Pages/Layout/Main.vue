@@ -17,6 +17,11 @@
         </div>
     </nav>
 
+    <main>
+        <slot>
+            
+        </slot>
+    </main>
 
     <footer>
         <div class="absolute text-center bottom-0 w-full bg-gray-900 text-white p-6">
