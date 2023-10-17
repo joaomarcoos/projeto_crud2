@@ -12,6 +12,6 @@ class JogoController extends Controller
             $id = 1;
             $name = "GTA";
 
-            return Inertia::render('Index', ['id'=> $id, 'name'=> $name]);
+            return Inertia::render('Jogos/Index', ['id'=> $id, 'name'=> $name]);
     }
 }
