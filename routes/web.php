@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\JogoController;
+use Faker\Guesser\Name;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -32,8 +33,16 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::prefix('jogos')->group(function () {
+    
+    Route::get('/', [JogoController::class, 'index'])->name('jogos.index');
 
-Route::get('/index', [JogoController::class, 'index'])->name('jogos.index');
+    Route::get('/create', [JogoController::class, 'create'])->name('jogos.create');
+
+    Route::post('/', [JogoController::class,'store'])->name('jogos.store');
+
+});
+
 
 Route::fallback(function(){
     return "Erro ao encontrar a rota";

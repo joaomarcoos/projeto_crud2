@@ -2,17 +2,14 @@
     <nav class="bg-white p-8">
         <div class="container mx-auto flex justify-between items-center">
 
-            <a href="#">
+            <a href="/">
                 <img src="img/logo.png" alt="Logo" class="w-28 h-auto object-cover">
             </a>
 
             <div class="space-x-6">
-                <a href="/" class="hover:bg-gray-300 p-2 rounded-md">HOME</a>
-                <a href="#" class="hover:bg-gray-300 p-2 rounded-md">JOGOS</a>
+                <a href="/jogos" class="hover:bg-gray-300 p-2 rounded-md">JOGOS</a>
                 <a href="#" class="hover:bg-gray-300 p-2 rounded-md">CATEGORIAS</a>
                 <a href="#" class="hover:bg-gray-300 p-2 rounded-md">LANÇAMENTOS</a>
-                <a href="#" class="hover:bg-gray-300 p-2 rounded-md">ENTRAR</a>
-                <a href="#" class="hover:bg-gray-300 p-2 rounded-md">CADASTRAR</a>
             </div>
         </div>
     </nav>

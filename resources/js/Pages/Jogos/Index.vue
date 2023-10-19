@@ -1,26 +1,40 @@
 <template>
     <CustomMain>
+        <div class="containe mx-auto  px-4 py-8 font-mono">
+            <h1 class="font-weight-bolder font-bold text-3xl">Listagem de jogos</h1>
 
-        <div class="w-full bg-gray-500">
-            <h1>Olá</h1>
-            
-            <p>{{ id }}</p>
-            <p>{{ name }}</p>
+            <button  class="bg-blue-400 rounded-md px-4 py-2 mb-4 mt-4">Novo</button>
 
-            oasdfasd
+            <div class="w-1/2 flex flex-row rounded-md">
+                <div v-for="jogo in jogos" :key="jogo.id" class="bg-gray-900 text-white rounded-md shadow-lg px-4 m-5">
+                    <div>
+                        <img src="#" alt="imagem">
+                    </div>
+
+                    <div class="p-4">
+                        <p class="">
+                            descrição do jogo que virá do banco em breve
+                        </p>
+                        <h2>{{ jogo.name }}</h2>
+                        <h3>Categoria: {{ jogo.categoria }}</h3>
+                        <h3>Valor: R$ {{ jogo.vlr_jogo }}</h3>
+                    </div>
+
+                    <button class="w-full bg-blue-400 rounded-md px-4 py-2 mb-4">Comprar</button>
+                </div>
+            </div>
         </div>
+
     </CustomMain>
 </template>
 <script setup>
 import CustomMain from "@/Pages/Layout/Main.vue";
+
      const props = defineProps({
-        id:{
-            type: Number,
-            required: true,
-        },
-        name:{
-            type: String,
-            default: 'nome não informado!'
-        }
+       jogos:{
+        type: Array,
+       required: true
+       },
+
      })
 </script>
