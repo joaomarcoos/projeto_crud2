@@ -31,14 +31,14 @@
                             <label class=" text-slate-100 text-xs font-bold mb-2" for="ano_criacao">
                                 Ano de Criação:
                             </label>
-                            <input v-model="form.ano_criacao" name="categoria" class="w-full border rounded py-3 px-4 mb-3 leading-tight" type="number">
+                            <input v-model="form.ano_criacao" name="ano_criacao" class="w-full border rounded py-3 px-4 mb-3 leading-tight" type="number">
                         </div>
 
                         <div class="w-full px-3 mb-6 md:mb-0">
-                            <label class=" text-slate-100 text-xs font-bold mb-2" for="ano_criacao">
+                            <label class=" text-slate-100 text-xs font-bold mb-2" for="vlr_jogo">
                                 Valor do Jogo:
                             </label>
-                            <input v-model="form.vlr_jogo" name="categoria" class="w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight" type="number" placeholder="Digite o valor do jogo">
+                            <input v-model="form.vlr_jogo" name="vlr_jogo" class="w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight" type="number" placeholder="Digite o valor do jogo">
                         </div>
     
     
@@ -76,10 +76,12 @@ function salvar(){
     axios.post(route('jogos.store'), form)
     .then((res)=>{
         if(res.status == 200){
-            router.visit('/');
-        }else {
-        console.log('Erro na solicitação:', res.status, res.data);
-      }
+            router.visit('/jogos');
+        }
+    })
+
+    .catch((err)=>{
+        console.log(err.menssage);
     })
 }
 

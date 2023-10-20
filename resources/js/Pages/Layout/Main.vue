@@ -16,12 +16,16 @@
 
     <main>
         <slot>
-            
+            <div class="w-full flex justify-center items-center ">
+                <div>
+                    <h1 class="font-extrabold text-xl">Em criação ainda</h1>
+                </div>
+            </div>
         </slot>
     </main>
 
     <footer>
-        <div class="absolute text-center bottom-0 w-full bg-gray-900 text-white p-6">
+        <div class="fixed text-center bottom-0 w-full bg-gray-900 text-white p-6">
             <p class="text-white font-weight-bold text-sm">Copyright &copy; 2023</p>
         </div>
     </footer>

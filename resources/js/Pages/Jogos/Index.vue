@@ -3,10 +3,13 @@
         <div class="containe mx-auto  px-4 py-8 font-mono">
             <h1 class="font-weight-bolder font-bold text-3xl">Listagem de jogos</h1>
 
-            <button  class="bg-blue-400 rounded-md px-4 py-2 mb-4 mt-4">Novo</button>
+            <button
+            
+            @click="getPage"
+            class="bg-blue-400 rounded-md px-4 py-2 mb-4 mt-4">Novo</button>
 
-            <div class="w-1/2 flex flex-row rounded-md">
-                <div v-for="jogo in jogos" :key="jogo.id" class="bg-gray-900 text-white rounded-md shadow-lg px-4 m-5">
+            <div class="w-full flex flex-wrap ml-0 mr-0 rounded-md">
+                <div v-for="jogo in jogos" :key="jogo.id" class="w-80 bg-gray-900 text-white rounded-md shadow-lg px-4 m-5">
                     <div>
                         <img src="#" alt="imagem">
                     </div>
@@ -29,6 +32,7 @@
 </template>
 <script setup>
 import CustomMain from "@/Pages/Layout/Main.vue";
+import { router } from "@inertiajs/vue3";
 
      const props = defineProps({
        jogos:{
@@ -37,4 +41,8 @@ import CustomMain from "@/Pages/Layout/Main.vue";
        },
 
      })
+
+    function getPage(){
+        router.visit('/jogos/create')
+    }
 </script>
